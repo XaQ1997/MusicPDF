@@ -52,4 +52,28 @@ class MusicalCharContainerTest {
         assertEquals(1, (2*objTest.length).toInt())
         assertEquals("img/half_pause.svg", objTest.image)
     }
+
+    @Test
+    fun KeyBetweenContainersTest()
+    {
+        val keysContainerObj=testObj.keysContainer[32u.toUByte()]!!
+        val mainContainerObj=testObj.mainContainer["Klucze"]!![32u.toUByte()]!!
+
+        assertEquals(keysContainerObj.id, mainContainerObj.id)
+        assertEquals(keysContainerObj.charName, mainContainerObj.charName)
+        assertEquals(keysContainerObj.image, mainContainerObj.image)
+    }
+
+    @Test
+    fun KeyInOwnContainerTest()
+    {
+        val objTest=testObj.keysContainer[34u.toUByte()]!!
+
+        assertEquals(34u.toUByte(), objTest.id)
+        assertEquals("Klucz", objTest.charName)
+        assertEquals("Klucz sopranowy", objTest.keyName)
+        assertEquals('C', objTest.type)
+        assertEquals(0.toByte(), objTest.height)
+        assertEquals("img/C_key.svg", objTest.image)
+    }
 }

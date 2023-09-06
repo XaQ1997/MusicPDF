@@ -25,9 +25,17 @@ class MusicalCharContainer {
         23u.toUByte() to MusicalPause(23u.toUByte(), "Pauza stodwudziestkoósemkowa", 1.0/128, "img/128pause.svg")
     )
 
+    //Klucze mają mieć id z zakresu 32-47
+    val keysContainer= mapOf<UByte, MusicalKey>(
+        32u.toUByte() to MusicalKey(32u.toUByte(), "Klucz wiolinowy", 'G', img="img/G_key.svg"),
+        33u.toUByte() to MusicalKey(33u.toUByte(), "Klucz basowy", 'F', img="img/F_key.svg"),
+        34u.toUByte() to MusicalKey(34u.toUByte(), "Klucz sopranowy", 'C', img="img/C_key.svg")
+    )
+
     //Główny kontener
     val mainContainer=mapOf<String, Map<UByte, MusicalChar>>(
         "Nuty" to notesContainer,
-        "Pauzy" to pausesContainer
+        "Pauzy" to pausesContainer,
+        "Klucze" to keysContainer
     )
 }
