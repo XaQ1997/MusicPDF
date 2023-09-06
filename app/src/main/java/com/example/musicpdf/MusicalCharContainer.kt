@@ -1,7 +1,7 @@
 package com.example.musicpdf
 
 class MusicalCharContainer {
-    //Nuty mają mieć id z zakresu 0-16
+    //Nuty mają mieć id z zakresu 0-15
     val notesContainer= mapOf<UByte, MusicalNote>(
         0u.toUByte() to MusicalNote(0u.toUByte(), "Cała nuta", 1.0, img="img/whole_note.svg"),
         1u.toUByte() to MusicalNote(1u.toUByte(), "Półnuta", 0.5, img="img/half_note.svg"),
@@ -13,8 +13,21 @@ class MusicalCharContainer {
         7u.toUByte() to MusicalNote(7u.toUByte(), "Stodwudziestkaósemka", 1.0/128, img="img/128note.svg")
     )
 
+    //Pauzy mają mieć id z zakresu 16-31
+    val pausesContainer=mapOf<UByte, MusicalPause>(
+        16u.toUByte() to MusicalPause(16u.toUByte(), "Pauza całonutowa", 1.0, "img/whole_pause.svg"),
+        17u.toUByte() to MusicalPause(17u.toUByte(), "Pauza półnutowa", 0.5, "img/half_pause.svg"),
+        18u.toUByte() to MusicalPause(18u.toUByte(), "Pauza ćwierćnutowa", 0.25, "img/quarter_pause.svg"),
+        19u.toUByte() to MusicalPause(19u.toUByte(), "Pauza ósemkowa", 1.0/8, "img/8pause.svg"),
+        20u.toUByte() to MusicalPause(20u.toUByte(), "Pauza szesnastkowa", 1.0/16, "img/16pause.svg"),
+        21u.toUByte() to MusicalPause(21u.toUByte(), "Pauza trzydziestkodwójkowa", 1.0/32, "img/32pause.svg"),
+        22u.toUByte() to MusicalPause(22u.toUByte(), "Pauza sześdziesiątkoczwórkowa", 1.0/64, "img/64pause.svg"),
+        23u.toUByte() to MusicalPause(23u.toUByte(), "Pauza stodwudziestkoósemkowa", 1.0/128, "img/128pause.svg")
+    )
+
     //Główny kontener
     val mainContainer=mapOf<String, Map<UByte, MusicalChar>>(
-        "Nuty" to notesContainer
+        "Nuty" to notesContainer,
+        "Pauzy" to pausesContainer
     )
 }
