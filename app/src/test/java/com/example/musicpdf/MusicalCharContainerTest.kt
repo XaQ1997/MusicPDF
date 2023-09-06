@@ -29,4 +29,27 @@ class MusicalCharContainerTest {
         assertEquals("c", objTest.height)
         assertEquals("img/16note.svg", objTest.image)
     }
+
+    @Test
+    fun PauseBetweenContainersTest()
+    {
+        val pausesContainerObj=testObj.pausesContainer[20u.toUByte()]!!
+        val mainContainerObj=testObj.mainContainer["Pauzy"]!![20u.toUByte()]!!
+
+        assertEquals(pausesContainerObj.id, mainContainerObj.id)
+        assertEquals(pausesContainerObj.charName, mainContainerObj.charName)
+        assertEquals(pausesContainerObj.image, mainContainerObj.image)
+    }
+
+    @Test
+    fun PauseInOwnContainerTest()
+    {
+        val objTest=testObj.pausesContainer[17u.toUByte()]!!
+
+        assertEquals(17u.toUByte(), objTest.id)
+        assertEquals("Pauza", objTest.charName)
+        assertEquals("Pauza półnutowa", objTest.pauseName)
+        assertEquals(1, (2*objTest.length).toInt())
+        assertEquals("img/half_pause.svg", objTest.image)
+    }
 }
