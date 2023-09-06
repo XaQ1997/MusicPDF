@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="59.331001"
+   height="93.709"
+   viewBox="0 0 15.697994 24.79384"
+   version="1.1"
+   id="svg4416"
+   sodipodi:docname="Semiminima.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <defs
+     id="defs4410" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-619.28458"
+     inkscape:cy="-63.367033"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="700"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4413">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-272.20614)">
+    <g
+       id="g5146"
+       transform="matrix(0.26458333,0,0,0.26458333,-225.33333,174.94051)">
+      <polyline
+         id="polyline58"
+         points="896.069,444.895 896.069,367.618"
+         class="Stem"
+         style="fill:none;stroke:#000000;stroke-width:2.73000002;stroke-linejoin:bevel" />
+      <path
+         id="path84"
+         d="M 31.5,-8.20313 C 30,-10.9063 27.1094,-12.5938 23.2031,-13 c -0.6093,-0.0938 -1.1093,-0.0938 -1.7031,-0.0938 -3.5,0 -7.2969,1 -10.7969,2.8907 C 4.09375,-6.59375 0,-0.703125 0,4.40625 c 0,1.39063 0.203125,2.6875 0.90625,3.89063 1.5,2.70312 4.5,4.40622 8.39063,4.79692 0.60937,0.1093 1.10942,0.1093 1.70312,0.1093 3.5,0 7.2031,-1 10.7031,-2.9062 C 28.2969,6.70313 32.5,0.90625 32.5,-4.20313 c 0,-1.39062 -0.2969,-2.79687 -1,-4"
+         transform="matrix(0.992126,0,0,0.992126,865.197,448.228)"
+         class="Note"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
