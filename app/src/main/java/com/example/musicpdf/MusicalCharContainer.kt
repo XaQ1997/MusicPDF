@@ -32,6 +32,12 @@ class MusicalCharContainer {
         34u.toUByte() to MusicalKey(34u.toUByte(), "Klucz sopranowy", 'C', img="img/C_key.svg")
     )
 
+    //Kreski taktowe mają mieć id z zakresu 48-63
+    val barLinesContainer= mapOf<UByte, BarLine>(
+        48u.toUByte() to BarLine(48u.toUByte(), "Pojedyncza kreska taktowa", "img/single_bar_line.png"),
+        49u.toUByte() to BarLine(49u.toUByte(), "Końcowa kreska taktowa", "img/end_bar_line.png")
+    )
+
     //Główny kontener
     val mainContainer=mapOf<String, Map<UByte, MusicalChar>>(
         "Nuty" to notesContainer,
