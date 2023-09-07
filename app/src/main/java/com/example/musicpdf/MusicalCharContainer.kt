@@ -42,6 +42,7 @@ class MusicalCharContainer {
     val mainContainer=mapOf<String, Map<UByte, MusicalChar>>(
         "Nuty" to notesContainer,
         "Pauzy" to pausesContainer,
-        "Klucze" to keysContainer
+        "Klucze" to keysContainer,
+        "Kreski taktowe" to barLinesContainer
     )
 }

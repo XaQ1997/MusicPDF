@@ -76,4 +76,26 @@ class MusicalCharContainerTest {
         assertEquals(0.toByte(), objTest.height)
         assertEquals("img/C_key.svg", objTest.image)
     }
+
+    @Test
+    fun BarLineBetweenContainersTest()
+    {
+        val barLinesContainerObj=testObj.barLinesContainer[48u.toUByte()]!!
+        val mainContainerObj=testObj.mainContainer["Kreski taktowe"]!![48u.toUByte()]!!
+
+        assertEquals(barLinesContainerObj.id, mainContainerObj.id)
+        assertEquals(barLinesContainerObj.charName, mainContainerObj.charName)
+        assertEquals(barLinesContainerObj.image, mainContainerObj.image)
+    }
+
+    @Test
+    fun BarLineInOwnContainerTest()
+    {
+        val objTest=testObj.barLinesContainer[49u.toUByte()]!!
+
+        assertEquals(49u.toUByte(), objTest.id)
+        assertEquals("Kreska taktowa", objTest.charName)
+        assertEquals("Końcowa kreska taktowa", objTest.barLineName)
+        assertEquals("img/end_bar_line.png", objTest.image)
+    }
 }
