@@ -6,13 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/load_document_button"
+        android:layout_width="291dp"
+        android:layout_height="107dp"
+        android:text="Wczytaj dokument"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="450dp" />
 
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="291dp"
+        android:layout_height="107dp"
+        android:text="Zamknij"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="580dp" />
+
+    <Button
+        android:id="@+id/new_document_button"
+        android:layout_width="291dp"
+        android:layout_height="107dp"
+        android:text="Nowy dokument"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="325dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
