@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MusicalNoteTest {
-    val testObj=MusicalNote(0u.toUByte(), "Testowa nuta", 1.0, img="~/8note.svg")
+    val testObj=MusicalNote(0u.toUByte(), "Testowa nuta", 1.0)
 
     @Test
     fun idTest()
@@ -34,11 +34,5 @@ class MusicalNoteTest {
     fun heightTest()
     {
         assertEquals("c", testObj.height)
-    }
-
-    @Test
-    fun imageTest()
-    {
-        assertEquals("~/8note.svg", testObj.image)
     }
 }

@@ -14,7 +14,6 @@ class MusicalCharContainerTest {
 
         assertEquals(notesContainerObj.id, mainContainerObj.id)
         assertEquals(notesContainerObj.charName, mainContainerObj.charName)
-        assertEquals(notesContainerObj.image, mainContainerObj.image)
     }
 
     @Test
@@ -27,7 +26,6 @@ class MusicalCharContainerTest {
         assertEquals("Szesnastka", objTest.noteName)
         assertEquals(1, (16*objTest.length).toInt())
         assertEquals("c", objTest.height)
-        assertEquals("img/16note.svg", objTest.image)
     }
 
     @Test
@@ -38,7 +36,6 @@ class MusicalCharContainerTest {
 
         assertEquals(pausesContainerObj.id, mainContainerObj.id)
         assertEquals(pausesContainerObj.charName, mainContainerObj.charName)
-        assertEquals(pausesContainerObj.image, mainContainerObj.image)
     }
 
     @Test
@@ -50,7 +47,6 @@ class MusicalCharContainerTest {
         assertEquals("Pauza", objTest.charName)
         assertEquals("Pauza półnutowa", objTest.pauseName)
         assertEquals(1, (2*objTest.length).toInt())
-        assertEquals("img/half_pause.svg", objTest.image)
     }
 
     @Test
@@ -61,7 +57,6 @@ class MusicalCharContainerTest {
 
         assertEquals(keysContainerObj.id, mainContainerObj.id)
         assertEquals(keysContainerObj.charName, mainContainerObj.charName)
-        assertEquals(keysContainerObj.image, mainContainerObj.image)
     }
 
     @Test
@@ -74,7 +69,6 @@ class MusicalCharContainerTest {
         assertEquals("Klucz sopranowy", objTest.keyName)
         assertEquals('C', objTest.type)
         assertEquals(0.toByte(), objTest.height)
-        assertEquals("img/C_key.svg", objTest.image)
     }
 
     @Test
@@ -85,7 +79,6 @@ class MusicalCharContainerTest {
 
         assertEquals(barLinesContainerObj.id, mainContainerObj.id)
         assertEquals(barLinesContainerObj.charName, mainContainerObj.charName)
-        assertEquals(barLinesContainerObj.image, mainContainerObj.image)
     }
 
     @Test
@@ -96,6 +89,5 @@ class MusicalCharContainerTest {
         assertEquals(49u.toUByte(), objTest.id)
         assertEquals("Kreska taktowa", objTest.charName)
         assertEquals("Końcowa kreska taktowa", objTest.barLineName)
-        assertEquals("img/end_bar_line.png", objTest.image)
     }
 }

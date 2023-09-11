@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class BarLineTest {
-    val testObj=BarLine(48u.toUByte(), "Testowa kreska taktowa", "~/end_bar_line.png")
+    val testObj=BarLine(48u.toUByte(), "Testowa kreska taktowa")
 
     @Test
     fun idTest()
@@ -22,11 +22,5 @@ class BarLineTest {
     fun barLineNameTest()
     {
         assertEquals("Testowa kreska taktowa", testObj.barLineName)
-    }
-
-    @Test
-    fun imageTest()
-    {
-        assertEquals("~/end_bar_line.png", testObj.image)
     }
 }

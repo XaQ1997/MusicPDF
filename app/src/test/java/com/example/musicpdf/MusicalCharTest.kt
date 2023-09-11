@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MusicalCharTest {
-    val testObj=MusicalChar(0u.toUByte(), "Testowy znak muzyczny", "~/8note.svg")
+    val testObj=MusicalChar(0u.toUByte(), "Testowy znak muzyczny")
 
     @Test
     fun idTest()
@@ -16,11 +16,5 @@ class MusicalCharTest {
     fun nameTest()
     {
         assertEquals("Testowy znak muzyczny", testObj.charName)
-    }
-
-    @Test
-    fun imageTest()
-    {
-        assertEquals("~/8note.svg", testObj.image)
     }
 }

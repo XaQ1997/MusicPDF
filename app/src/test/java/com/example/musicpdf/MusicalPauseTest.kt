@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MusicalPauseTest {
-    val testObj=MusicalPause(16u.toUByte(), "Testowa pauza", 1.0, "~/8pause.svg")
+    val testObj=MusicalPause(16u.toUByte(), "Testowa pauza", 1.0)
 
     @Test
     fun idTest()
@@ -28,11 +28,5 @@ class MusicalPauseTest {
     fun lengthTest()
     {
         assertEquals(1, testObj.length.toInt())
-    }
-
-    @Test
-    fun imageTest()
-    {
-        assertEquals("~/8pause.svg", testObj.image)
     }
 }

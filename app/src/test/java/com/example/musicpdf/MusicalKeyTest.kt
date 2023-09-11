@@ -4,7 +4,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MusicalKeyTest {
-    var testObj=MusicalKey(32u.toUByte(), "Testowy klucz", 'G', 0, "~/G_key.svg")
+    var testObj=MusicalKey(32u.toUByte(), "Testowy klucz", 'G', 0)
 
     @Test
     fun idTest()
@@ -34,11 +34,5 @@ class MusicalKeyTest {
     fun heightTest()
     {
         assertEquals(0.toByte(), testObj.height)
-    }
-
-    @Test
-    fun imageTest()
-    {
-        assertEquals("~/G_key.svg", testObj.image)
     }
 }
