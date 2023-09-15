@@ -10,23 +10,26 @@
         android:id="@+id/load_document_button"
         android:layout_width="291dp"
         android:layout_height="107dp"
+        android:backgroundTint="#FFC107"
         android:text="Wczytaj dokument"
         tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="450dp" />
+        tools:layout_editor_absoluteY="405dp" />
 
     <Button
         android:id="@+id/close_button"
         android:layout_width="291dp"
         android:layout_height="107dp"
+        android:backgroundTint="#FF0000"
         android:text="Zamknij"
         tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="580dp" />
+        tools:layout_editor_absoluteY="535dp" />
 
     <Button
         android:id="@+id/new_document_button"
         android:layout_width="291dp"
         android:layout_height="107dp"
+        android:backgroundTint="#00FF00"
         android:text="Nowy dokument"
         tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="325dp" />
+        tools:layout_editor_absoluteY="276dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
