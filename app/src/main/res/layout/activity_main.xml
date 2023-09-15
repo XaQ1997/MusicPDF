@@ -9,27 +9,37 @@
     <Button
         android:id="@+id/load_document_button"
         android:layout_width="291dp"
-        android:layout_height="107dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="23dp"
         android:backgroundTint="#FFC107"
         android:text="Wczytaj dokument"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="405dp" />
+        app:layout_constraintBottom_toTopOf="@+id/close_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_document_button" />
 
     <Button
         android:id="@+id/close_button"
-        android:layout_width="291dp"
-        android:layout_height="107dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#FF0000"
         android:text="Zamknij"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="535dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/load_document_button"
+        app:layout_constraintStart_toStartOf="@+id/load_document_button"
+        app:layout_constraintTop_toBottomOf="@+id/load_document_button" />
 
     <Button
         android:id="@+id/new_document_button"
-        android:layout_width="291dp"
-        android:layout_height="107dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginBottom="22dp"
         android:backgroundTint="#00FF00"
         android:text="Nowy dokument"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintBottom_toTopOf="@+id/load_document_button"
+        app:layout_constraintEnd_toEndOf="@+id/load_document_button"
+        app:layout_constraintStart_toStartOf="@+id/load_document_button"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
