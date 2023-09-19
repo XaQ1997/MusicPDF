@@ -6,6 +6,16 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/whole_note"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Cała nuta"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <Button
         android:id="@+id/single_bar_line"
         android:layout_width="185dp"
         android:layout_height="62dp"
@@ -13,7 +23,7 @@
         android:text="Pojedyncza kreska taktowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="518dp" />
+        tools:layout_editor_absoluteY="589dp" />
 
     <Button
         android:id="@+id/end_bar_line"
@@ -23,7 +33,7 @@
         android:text="Końcowa kreska taktowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="518dp" />
+        tools:layout_editor_absoluteY="589dp" />
 
     <Button
         android:id="@+id/pause16"
@@ -33,7 +43,7 @@
         android:text="Pauza szesnastkowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="314dp" />
+        tools:layout_editor_absoluteY="386dp" />
 
     <Button
         android:id="@+id/pause32"
@@ -43,7 +53,7 @@
         android:text="Pauza trzydziestkodwójkowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="314dp" />
+        tools:layout_editor_absoluteY="386dp" />
 
     <Button
         android:id="@+id/pause8"
@@ -53,7 +63,7 @@
         android:text="Pauza ósemkowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="266dp" />
+        tools:layout_editor_absoluteY="338dp" />
 
     <Button
         android:id="@+id/quarter_pause"
@@ -63,7 +73,7 @@
         android:text="Pauza ćwierćnutowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="263dp" />
+        tools:layout_editor_absoluteY="335dp" />
 
     <Button
         android:id="@+id/half_pause"
@@ -73,7 +83,7 @@
         android:text="Pauza półnutowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="218dp" />
+        tools:layout_editor_absoluteY="290dp" />
 
     <Button
         android:id="@+id/whole_pause"
@@ -83,7 +93,7 @@
         android:text="Pauza całonutowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="216dp" />
+        tools:layout_editor_absoluteY="288dp" />
 
     <Button
         android:id="@+id/pause64"
@@ -93,7 +103,7 @@
         android:text="Pauza sześdziesiątkoczwórkowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="362dp" />
+        tools:layout_editor_absoluteY="434dp" />
 
     <Button
         android:id="@+id/pause128"
@@ -103,27 +113,7 @@
         android:text="Pauza stodwudziestkoósemkowa"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="362dp" />
-
-    <Button
-        android:id="@+id/whole_note"
-        android:layout_width="185dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#00FF0A"
-        android:text="Cała nuta"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="17dp" />
-
-    <Button
-        android:id="@+id/note128"
-        android:layout_width="185dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#00FF0A"
-        android:text="Stodwudziestkaósemka"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:layout_editor_absoluteY="434dp" />
 
     <Button
         android:id="@+id/note64"
@@ -133,7 +123,7 @@
         android:text="Sześdziesiątkaczwórka"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:layout_editor_absoluteY="236dp" />
 
     <Button
         android:id="@+id/note16"
@@ -143,7 +133,7 @@
         android:text="Szesnastka"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="116dp" />
+        tools:layout_editor_absoluteY="188dp" />
 
     <Button
         android:id="@+id/note32"
@@ -153,7 +143,7 @@
         android:text="Trzydziestkadwójka"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="116dp" />
+        tools:layout_editor_absoluteY="188dp" />
 
     <Button
         android:id="@+id/quarter_note"
@@ -163,7 +153,7 @@
         android:text="Ćwierćnuta"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="65dp" />
+        tools:layout_editor_absoluteY="137dp" />
 
     <Button
         android:id="@+id/note8"
@@ -173,7 +163,7 @@
         android:text="Ósemka"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="68dp" />
+        tools:layout_editor_absoluteY="140dp" />
 
     <Button
         android:id="@+id/half_note"
@@ -183,7 +173,7 @@
         android:text="Półnuta"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="18dp" />
+        tools:layout_editor_absoluteY="90dp" />
 
     <Button
         android:id="@+id/g_key"
@@ -192,7 +182,7 @@
         android:backgroundTint="#0000FF"
         android:text="Klucz wiolinowy"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="435dp" />
+        tools:layout_editor_absoluteY="506dp" />
 
     <Button
         android:id="@+id/c_key"
@@ -201,7 +191,7 @@
         android:backgroundTint="#0000FF"
         android:text="Klucz sopranowy"
         tools:layout_editor_absoluteX="272dp"
-        tools:layout_editor_absoluteY="434dp" />
+        tools:layout_editor_absoluteY="506dp" />
 
     <Button
         android:id="@+id/f_key"
@@ -210,6 +200,16 @@
         android:backgroundTint="#0000FF"
         android:text="Klucz basowy"
         tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="434dp" />
+        tools:layout_editor_absoluteY="506dp" />
+
+    <Button
+        android:id="@+id/note128"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Stodwudziestkaósemka"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="236dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
