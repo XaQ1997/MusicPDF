@@ -1,6 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/single_bar_line"
+        android:layout_width="185dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#FFE500"
+        android:text="Pojedyncza kreska taktowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="518dp" />
+
+    <Button
+        android:id="@+id/end_bar_line"
+        android:layout_width="185dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#FFE500"
+        android:text="Końcowa kreska taktowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="518dp" />
+
+    <Button
+        android:id="@+id/pause16"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza szesnastkowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <Button
+        android:id="@+id/pause32"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza trzydziestkodwójkowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <Button
+        android:id="@+id/pause8"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza ósemkowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <Button
+        android:id="@+id/quarter_pause"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza ćwierćnutowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <Button
+        android:id="@+id/half_pause"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza półnutowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <Button
+        android:id="@+id/whole_pause"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza całonutowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="216dp" />
+
+    <Button
+        android:id="@+id/pause64"
+        android:layout_width="185dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza sześdziesiątkoczwórkowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <Button
+        android:id="@+id/pause128"
+        android:layout_width="185dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#FF0000"
+        android:text="Pauza stodwudziestkoósemkowa"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <Button
+        android:id="@+id/whole_note"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Cała nuta"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="17dp" />
+
+    <Button
+        android:id="@+id/note128"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Stodwudziestkaósemka"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <Button
+        android:id="@+id/note64"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Sześdziesiątkaczwórka"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <Button
+        android:id="@+id/note16"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Szesnastka"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <Button
+        android:id="@+id/note32"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Trzydziestkadwójka"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <Button
+        android:id="@+id/quarter_note"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Ćwierćnuta"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <Button
+        android:id="@+id/note8"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Ósemka"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/half_note"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FF0A"
+        android:text="Półnuta"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="18dp" />
+
+    <Button
+        android:id="@+id/g_key"
+        android:layout_width="127dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#0000FF"
+        android:text="Klucz wiolinowy"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="435dp" />
+
+    <Button
+        android:id="@+id/c_key"
+        android:layout_width="127dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#0000FF"
+        android:text="Klucz sopranowy"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <Button
+        android:id="@+id/f_key"
+        android:layout_width="121dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#0000FF"
+        android:text="Klucz basowy"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="434dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
