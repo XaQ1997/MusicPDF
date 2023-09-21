@@ -189,7 +189,7 @@
         android:layout_width="127dp"
         android:layout_height="69dp"
         android:backgroundTint="#0000FF"
-        android:text="Klucz sopranowy"
+        android:text="Klucz altowy"
         tools:layout_editor_absoluteX="272dp"
         tools:layout_editor_absoluteY="506dp" />
 

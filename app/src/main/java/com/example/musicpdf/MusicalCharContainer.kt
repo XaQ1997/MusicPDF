@@ -29,7 +29,7 @@ class MusicalCharContainer {
     val keysContainer= mapOf<UByte, MusicalKey>(
         32u.toUByte() to MusicalKey(32u.toUByte(), "Klucz wiolinowy", 'G'),
         33u.toUByte() to MusicalKey(33u.toUByte(), "Klucz basowy", 'F'),
-        34u.toUByte() to MusicalKey(34u.toUByte(), "Klucz sopranowy", 'C')
+        34u.toUByte() to MusicalKey(34u.toUByte(), "Klucz altowy", 'C')
     )
 
     //Kreski taktowe mają mieć id z zakresu 48-63

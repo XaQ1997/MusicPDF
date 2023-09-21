@@ -66,7 +66,7 @@ class MusicalCharContainerTest {
 
         assertEquals(34u.toUByte(), objTest.id)
         assertEquals("Klucz", objTest.charName)
-        assertEquals("Klucz sopranowy", objTest.keyName)
+        assertEquals("Klucz altowy", objTest.keyName)
         assertEquals('C', objTest.type)
         assertEquals(0.toByte(), objTest.height)
     }
