@@ -8,38 +8,20 @@
 
     <Button
         android:id="@+id/close_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="291dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="19dp"
         android:backgroundTint="#FF0000"
         android:text="Zamknij"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/load_document_button"
-        app:layout_constraintStart_toStartOf="@+id/load_document_button"
-        app:layout_constraintTop_toBottomOf="@+id/load_document_button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/new_document_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="276dp"
-        android:layout_marginBottom="21dp"
-        android:backgroundTint="#00FF00"
-        android:text="Nowy dokument"
-        app:layout_constraintBottom_toTopOf="@+id/load_document_button"
-        app:layout_constraintEnd_toEndOf="@+id/load_document_button"
-        app:layout_constraintStart_toStartOf="@+id/load_document_button"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pdf_database"
+        android:layout_width="367dp"
+        android:layout_height="458dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/load_document_button"
-        android:layout_width="291dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="22dp"
-        android:backgroundTint="#FFC107"
-        android:text="Wczytaj dokument"
-        app:layout_constraintBottom_toTopOf="@+id/close_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_document_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

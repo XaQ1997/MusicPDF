@@ -7,52 +7,74 @@
 
     <EditText
         android:id="@+id/name_document"
-        android:layout_width="368dp"
-        android:layout_height="38dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="220dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Nazwa pliku" />
 
     <Button
         android:id="@+id/cancel_button"
-        android:layout_width="160dp"
-        android:layout_height="58dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="48dp"
         android:backgroundTint="#FF0000"
         android:text="Anuluj"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="376dp" />
-
-    <Button
-        android:id="@+id/g_key_button"
-        android:layout_width="123dp"
-        android:layout_height="77dp"
-        android:text="Klucz wiolinowy"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="282dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/create_button"
+        app:layout_constraintEnd_toStartOf="@+id/create_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/create_button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/create_button"
-        android:layout_width="160dp"
-        android:layout_height="58dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="180dp"
         android:backgroundTint="#00FF00"
         android:text="Utwórz"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancel_button"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <Button
-        android:id="@+id/c_key_button"
-        android:layout_width="123dp"
-        android:layout_height="77dp"
-        android:text="Klucz altowy"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="282dp" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="185dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/create_button"
+        app:layout_constraintEnd_toEndOf="@+id/create_button"
+        app:layout_constraintStart_toStartOf="@+id/cancel_button"
+        app:layout_constraintTop_toBottomOf="@+id/name_document">
 
-    <Button
-        android:id="@+id/f_key_button"
-        android:layout_width="123dp"
-        android:layout_height="77dp"
-        android:text="Klucz basowy"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="282dp" />
+        <RadioButton
+            android:id="@+id/g_key_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Klucz wiolinowy" />
+
+        <RadioButton
+            android:id="@+id/f_key_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Klucz basowy" />
+
+        <RadioButton
+            android:id="@+id/c_key_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Klucz altowy" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
