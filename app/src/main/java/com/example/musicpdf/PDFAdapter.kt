@@ -30,7 +30,7 @@ class PDFAdapter(private var pdfList: MutableList<PdfFile>) : RecyclerView.Adapt
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PDFHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.id.pdf_database, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_pdf_layout, parent, false)
         return PDFHolder(view)
     }
 
