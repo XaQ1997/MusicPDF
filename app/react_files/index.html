@@ -13,9 +13,9 @@
                     </span>
             </h1>
         </div>
-        <script src="libraries/react.js"></script>
-        <script src="libraries/react-dom.js"></script>
-        <script src="libraries/babel.js"></script>
+        <script src="https://unpkg.com/react/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
         <script type="text/babel">
             const Header = function() {
                 return (
@@ -24,34 +24,43 @@
                     </h1>
                 );
             };
-            function Table({headers, initialData}) {
-                return(
-                    <table>
-                        <thead>
-                            <tr>
-                                {headers.map((title, idx)=>(
-                                    <th key={idx}>{title}</th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {initialData.map((row, idx)=>(
-                                <tr key={idx}>
-                                    {row.map((cell, idx)=>(
-                                        <td key={idx}>{cell}</td>
-                                    ))}
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                );
+
+            function Table({ headers, initialData }) {
+              return (
+                <table>
+                  <thead>
+                    <tr>
+                      {headers.map((title, idx) => (
+                        <th key={idx}>{title}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {initialData.map((row, idx) => (
+                      <tr key={idx}>
+                        {row.map((cell, idx) => (
+                          <td key={idx}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              );
             }
+
             Table.propTypes={
                 headers: PropTypes.arrayOf(PropTypes.string),
                 initialData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
             };
+
+            const headers=['Tytuł', 'Instrument'];
+            const data=[['test', 'null']];
+
             ReactDOM.render(
-                <Header />,
+                <div>
+                    <Header />
+                    <Table headers={headers} initialData={data} />
+                </div>,
                 document.getElementById('app')
             );
         </script>
