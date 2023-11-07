@@ -5,18 +5,21 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <div id="app">
-            <h1 id="my-heading">
+    <div id="app">
+        <h1 id="my-heading">
                     <span>
                         Baza danych plików muzycznych w formacie
                         <b>PDF</b>
                     </span>
-            </h1>
-        </div>
+        </h1>
+    </div>
+    <!-- Bezpośrednie importowanie modułów -->
         <script src="https://unpkg.com/react/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/prop-types/prop-types.js"></script>
         <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
         <script type="text/babel">
+            // Twój kod pozostaje bez zmian
             const Header = function() {
                 return (
                     <h1 id="my-heading">
@@ -26,35 +29,35 @@
             };
 
             function Table({ headers, initialData }) {
-              return (
-                <table>
-                  <thead>
-                    <tr>
-                      {headers.map((title, idx) => (
-                        <th key={idx}>{title}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {initialData.map((row, idx) => (
-                      <tr key={idx}>
-                        {row.map((cell, idx) => (
-                          <td key={idx}>{cell}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              );
+                return (
+                    <table>
+                        <thead>
+                            <tr>
+                                {headers.map((title, idx) => (
+                                    <th key={idx}>{title}</th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {initialData.map((row, idx) => (
+                                <tr key={idx}>
+                                    {row.map((cell, idx) => (
+                                        <td key={idx}>{cell}</td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                );
             }
 
-            Table.propTypes={
+            Table.propTypes = {
                 headers: PropTypes.arrayOf(PropTypes.string),
                 initialData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
             };
 
-            const headers=['Tytuł', 'Instrument'];
-            const data=[['test', 'null']];
+            const headers = ['Tytuł', 'Instrument'];
+            const data = [];
 
             ReactDOM.render(
                 <div>
