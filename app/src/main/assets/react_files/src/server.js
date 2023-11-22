@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const port = 8000; // Dowolny port, na którym chcesz uruchomić serwer
+const port = 8000;
 
 // Endpoint do pobierania listy plików
 app.get('/api/files', (req, res) => {
-  const directoryPath = 'https://github.com/XaQ1997/MusicPDF/blob/a1d19cef77afd471e4e4a049da91d367034f29a9/app/react_files/pdf_directory'; // Zmień na rzeczywistą ścieżkę
+  const directoryPath = path.join(__dirname, 'pdf_directory');
 
   // Odczytaj pliki z katalogu
   fs.readdir(directoryPath, (err, files) => {
@@ -31,7 +31,7 @@ app.get('/api/files', (req, res) => {
 // Endpoint do pobierania plików
 app.get('/api/files/download/:fileName', (req, res) => {
   const fileName = req.params.fileName;
-  const filePath = path.join('https://github.com/XaQ1997/MusicPDF/blob/a1d19cef77afd471e4e4a049da91d367034f29a9/app/react_files/pdf_directory', fileName); // Zmień na rzeczywistą ścieżkę
+  const filePath = path.join(__dirname, 'pdf_directory', fileName);
 
   // Wysyłanie pliku w odpowiedzi
   res.download(filePath, fileName, (err) => {

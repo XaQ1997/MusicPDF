@@ -43,7 +43,6 @@ Table.propTypes = {
 };
 
 const headers = ['Tytuł', 'Instrument'];
-const data = [];
 
 // Komponent, który pobiera dane z API
 const FileTable = () => {
@@ -57,7 +56,7 @@ const FileTable = () => {
     }, []); // Pusta tablica oznacza, że useEffect wykona się tylko raz po zamontowaniu komponentu
 
     return (
-      <Table headers={headers} initialData={files.map(file => [file.directory, <a href={file.link}>{file.name}</a>])} />
+      <Table headers={headers} initialData={files.map(file => [file.directory, <a href={file.link} target="_blank" rel="noopener noreferrer">{file.name}</a>])} />
     );
 };
 
