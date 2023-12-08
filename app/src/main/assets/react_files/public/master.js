@@ -1,30 +1,24 @@
-const path = require('path');
-
-function getName(fileName) {
-  const fileNameWithoutExtension = path.basename(fileName, path.extname(fileName));
-  const parts = fileNameWithoutExtension.split('_'); // Zakładam, że separator to '_'
-
-  return parts[0];
-}
-
 import React, { useState } from 'react';
-import { getFiles } from './server'; // Załóż, że plik server.js znajduje się w tym samym katalogu co plik komponentu
+import { getFiles, getName } from './server';
 
 const FileList = ({ files }) => {
   const [openedFile, setOpenedFile] = useState(null);
 
-  const handleFileOpen = (getName(fileName)) => {
-    setOpenedFile(fileName);
+  const handleFileOpen = (fileName) => {
+    const name = getName(fileName);
+    setOpenedFile(name);
   };
+
+  const uniqueFileNames = Array.from(new Set(files.map((file) => getName(file))));
 
   return (
     <div>
       <h2>Lista Plików</h2>
       <ul>
-        {files.map((file, index) => (
+        {uniqueFileNames.map((fileName, index) => (
           <li key={index}>
-            <span>{file}</span>
-            <button onClick={() => handleFileOpen(file)}>Otwórz</button>
+            <span>{fileName}</span>
+            <button onClick={() => handleFileOpen(fileName)}>Otwórz</button>
           </li>
         ))}
       </ul>
