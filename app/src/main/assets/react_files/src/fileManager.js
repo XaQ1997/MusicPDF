@@ -22,7 +22,7 @@ class FileHandler {
       .filter(file => fs.statSync(path.join(this.pdfDirectory, file)).isFile() && file.endsWith('.pdf'))
       .map(file => ({
         name: file,
-        link: `/pdf-directory/${file}`,
+        link: '../pdf-directory/${file}',
       }));
 
     return pdfFiles;
