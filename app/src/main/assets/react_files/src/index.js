@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import Link from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(
+const Home = () => (
   <div>
-    <Header />
-    <FileTable />
+    <h2>Strona Główna</h2>
+    <nav>
+      <ul>
+        <li><Link to="./master">Przejdź do Master</Link></li>
+        <li><Link to="./slave">Przejdź do Slave</Link></li>
+      </ul>
+    </nav>
   </div>
 );
