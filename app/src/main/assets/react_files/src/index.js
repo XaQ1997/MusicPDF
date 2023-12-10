@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 const Home = () => (
   <div>
@@ -11,4 +12,11 @@ const Home = () => (
       </ul>
     </nav>
   </div>
+);
+
+ReactDOM.render(
+  <Router>
+    <Home />
+  </Router>,
+  document.getElementById('root')
 );
