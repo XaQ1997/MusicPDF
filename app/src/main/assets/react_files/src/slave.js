@@ -38,4 +38,5 @@ function getFilesForSong(files, selectedSong) {
     .map(file => ({ name: file.name, link: file.link }));
 }
 
-ReactDOM.render(<SongDetails socket={socket} files={files} />, document.getElementById('songDetails'));
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<SongDetails socket={socket} files={files} />, document.getElementById('songDetails'));

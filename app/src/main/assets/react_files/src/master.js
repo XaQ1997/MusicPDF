@@ -49,4 +49,5 @@ class SongList extends React.Component {
   }
 }
 
-ReactDOM.render(<SongList socket={socket} />, document.getElementById('songList'));
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<SongList socket={socket} />, document.getElementById('songList'));
