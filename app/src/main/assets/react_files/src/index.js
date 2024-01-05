@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const Home = () => (
   <div>
     <h2>Strona Główna</h2>
     <nav>
       <ul>
-        <li><Link to="/master">Przejdź do Master</Link></li>
-        <li><Link to="/slave">Przejdź do Slave</Link></li>
+        <li><button><Link to="/master">Przejdź do Master</Link></button></li>
+        <li><button><Link to="/slave">Przejdź do Slave</Link></button></li>
       </ul>
     </nav>
   </div>
