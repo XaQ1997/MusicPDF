@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-const fileHandler = require('./fileManager').FileHandler("../pdf_directory");
+const fileHandler = require('./fileManager').FileHandler;
 
 app.get('/api/files', (req, res) => {
   const files = fileManager.getFiles();
