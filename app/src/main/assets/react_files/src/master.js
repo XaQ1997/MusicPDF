@@ -14,14 +14,14 @@ class SongList extends React.Component {
   fetchSongs() {
     axios.get('/api/files')
       .then(response => {
-        const uniqueFirstParts = new Set();
+        const uniqueNames = new Set();
 
         response.data.forEach((file) => {
           const firstPart = fileHandler.getName(file.name).song;
-          uniqueFirstParts.add(firstPart);
+          uniqueNames.add(firstPart);
         });
 
-        this.setState({ songs: Array.from(uniqueFirstParts) });
+        this.setState({ songs: Array.from(uniqueNames) });
       })
       .catch(error => {
         console.error('Błąd pobierania danych:', error);
@@ -49,5 +49,5 @@ class SongList extends React.Component {
   }
 }
 
-const root=ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<SongList socket={socket} />, document.getElementById('songList'));

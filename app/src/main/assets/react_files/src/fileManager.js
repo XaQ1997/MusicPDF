@@ -8,7 +8,7 @@ class FileHandler {
 
   getName(fileName) {
     const fileNameWithoutExtension = path.basename(fileName, path.extname(fileName));
-    const parts = fileNameWithoutExtension.split('-');
+    const parts = fileNameWithoutExtension.split('|');
     return {
       song: parts[0],
       instrument: parts[1] || 'Brak informacji o instrumencie',
@@ -16,15 +16,28 @@ class FileHandler {
   }
 
   getFiles() {
-    const filesInDirectory = fs.readdirSync(this.pdfDirectory);
+    try {
+      const filesInDirectory = fs.readdirSync(this.pdfDirectory);
 
-    const pdfFiles = filesInDirectory
-      .filter(file => fs.statSync(path.join(this.pdfDirectory, file)).isFile() && file.endsWith('.pdf'))
-      .map(file => ({
-        name: file,
-        link: '../pdf-directory/${file}',
-      }));
+      const pdfFiles = filesInDirectory
+        .filter(file => {
+          const filePath = path.join(this.pdfDirectory, file);
+          return fs.statSync(filePath).isFile() && file.endsWith('.pdf');
+        })
+        .map(file => {
+          const filePath = path.join(this.pdfDirectory, file); // Definicja filePath przed użyciem
+          return {
+            name: file,
+            link: filePath,
+          };
+        });
 
-    return pdfFiles;
+      return pdfFiles;
+    } catch (error) {
+      console.error('Błąd podczas pobierania plików:', error);
+      return [];
+    }
   }
 }
+
+module.exports = FileHandler;

@@ -1,42 +1,43 @@
-class SongDetails extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedSong: null,
-      songFiles: [],
+const SongDetails = ({ socket, files }) => {
+  const [selectedSong, setSelectedSong] = React.useState(null);
+  const [songFiles, setSongFiles] = React.useState([]);
+
+  React.useEffect(() => {
+    const handleSelectedSong = (selectedSong) => {
+      const filesForSong = getFilesForSong(files, selectedSong);
+      setSelectedSong(selectedSong);
+      setSongFiles(filesForSong);
     };
-  }
 
-  componentDidMount() {
-    this.props.socket.on('selectedSong', (selectedSong) => {
-      const filesForSong = getFilesForSong(this.props.files, selectedSong);
-      this.setState({ selectedSong, songFiles: filesForSong });
-    });
-  }
+    socket.on('selectedSong', handleSelectedSong);
 
-  render() {
-    return (
-      <div>
-        {this.state.selectedSong && (
-          <div>
-            <h2>{this.state.selectedSong}</h2>
-            <ul>
-              {this.state.songFiles.map((file, index) => (
-                <li key={index}>{file.name}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+    return () => {
+      // Czyszczenie subskrypcji, aby uniknąć wycieków pamięci
+      socket.off('selectedSong', handleSelectedSong);
+    };
+  }, [socket, files]);
 
-function getFilesForSong(files, selectedSong) {
-  return files
+  return (
+    <div>
+      {selectedSong && (
+        <div>
+          <h2>{selectedSong}</h2>
+          <ul>
+            {songFiles.map((file, index) => (
+              <li key={index}>{file.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Funkcja bezpośrednio w miejscu użycia
+const getFilesForSong = (files, selectedSong) =>
+  files
     .filter(file => fileHandler.getName(file.name).song === selectedSong)
     .map(file => ({ name: file.name, link: file.link }));
-}
 
-const root=ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<SongDetails socket={socket} files={files} />, document.getElementById('songDetails'));
