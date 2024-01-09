@@ -40,4 +40,4 @@ class FileHandler {
   }
 }
 
-module.exports = new FileHandler("../pdf_directory");
+module.exports = FileHandler;
