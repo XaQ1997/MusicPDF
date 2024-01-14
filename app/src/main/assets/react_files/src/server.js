@@ -6,10 +6,11 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-const FileManager = require('./fileManager'); // Poprawiony import
+const FileHandler = require('./fileManager.js');
 
 app.get('/api/files', (req, res) => {
-  const files = new FileManager("../pdf_directory").getFiles(); // Poprawiony sposób tworzenia instancji FileManager
+  let fileHandler= new FileHandler("../pdf_directory")
+  const files = fileHandler.getFiles(); // Poprawiony sposób tworzenia instancji FileManager
   res.json(files);
 });
 
