@@ -6,14 +6,14 @@ class FileHandler {
     this.pdfDirectory = pdfDirectory;
   }
 
-  getName(fileName) {
-    const fileNameWithoutExtension = path.basename(fileName, path.extname(fileName));
-    const parts = fileNameWithoutExtension.split('|');
-    return {
-      song: parts[0],
-      instrument: parts[1] || 'Brak informacji o instrumencie',
-    };
-  }
+//  getName(fileName) {
+//    const fileNameWithoutExtension = path.basename(fileName, path.extname(fileName));
+//    const parts = fileNameWithoutExtension.split('|');
+//    return {
+//      song: parts[0],
+//      instrument: parts[1] || 'Brak informacji o instrumencie',
+//    };
+//  }
 
   getFiles() {
     try {

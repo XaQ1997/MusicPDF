@@ -1,14 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
-const Home = () => (
-  <>
-    <h2>Strona Główna</h2>
-    <button onClick={() => window.location.href = 'master.html'}>Dyrygent</button>
-    <br />
-    <button onClick={() => window.location.href = 'slave.html'}>Muzyk</button>
-  </>
-);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Home />);
+ReactDOM.render(<App />, document.getElementById('App'));

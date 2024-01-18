@@ -2,57 +2,29 @@
 <html lang="pl">
     <head>
         <title>Lista Utworów</title>
-    </head>
-    <body>
-        <h1>Lista Utworów</h1>
-        <div id="songList"></div>
         <script src="https://unpkg.com/react/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/prop-types/prop-types.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="master.js"></script>
-        <script type="text/babel">
-          class SongList extends React.Component {
-            constructor(props) {
-              super(props);
-              this.state = {
-                songs: [],
-              };
-            }
-
-            componentDidMount() {
-              axios.get('/api/files')
-                .then(response => {
-                  const uniqueNames = getNames(response.data);
-                  this.setState({ songs: uniqueNames });
-                })
-                .catch(error => {
-                  console.error('Błąd pobierania danych:', error);
-                });
-            }
-
-            render() {
-              return (
-                <ul>
-                  {this.state.songs.map((song, index) => (
-                    <li key={index}>{song}</li>
-                  ))}
-                </ul>
-              );
-            }
-          }
-
-          const getNames = (songs) => {
-            const uniqueNames = new Set();
-            songs.forEach(song => {
-              const parts = song.name.split('-');
-              const firstPart = parts[0];
-              uniqueNames.add(firstPart);
-            });
-            return Array.from(uniqueNames);
-          };
-
-          ReactDOM.render(<SongList />, document.getElementById('songList'));
-        </script>
+        <script src="../src/master.js"></script>
+    </head>
+    <body>
+        <div id="page_title">
+            <h1>Lista Utworów</h1>
+        </div>
+        <div id="song_list">
+            <script>
+                SongList()
+            </script>
+        </div>
+<!--        <script>-->
+<!--&lt;!&ndash;            ReactDOM.render(&ndash;&gt;-->
+<!--&lt;!&ndash;                React.createElement('h1', null, 'Lista Utworów'),&ndash;&gt;-->
+<!--&lt;!&ndash;                document.getElementById('song_list')&ndash;&gt;-->
+<!--&lt;!&ndash;              );&ndash;&gt;-->
+<!--                ReactDOM.render(-->
+<!--                document.getElementById('song_list')-->
+<!--                );-->
+<!--        </script>-->
     </body>
 </html>

@@ -4,12 +4,19 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
+const axios=require('axios');
 
 const FileHandler = require('./fileManager.js');
 
+app.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+
+  next();
+});
+
 app.get('/api/files', (req, res) => {
-  let fileHandler= new FileHandler("../pdf_directory")
+  const fileHandler= new FileHandler("../pdf_directory")
   const files = fileHandler.getFiles(); // Poprawiony sposób tworzenia instancji FileManager
   res.json(files);
 });
