@@ -1,43 +1,39 @@
 const fs = require('fs');
 const path = require('path');
+const axios=require('axios');
 
-class FileHandler {
-  constructor(pdfDirectory) {
-    this.pdfDirectory = pdfDirectory;
-  }
+const FileHandler=(pdfDirectory)=> {
+  const filesInDirectory = fs.readdirSync(pdfDirectory);
 
-//  getName(fileName) {
-//    const fileNameWithoutExtension = path.basename(fileName, path.extname(fileName));
-//    const parts = fileNameWithoutExtension.split('|');
-//    return {
-//      song: parts[0],
-//      instrument: parts[1] || 'Brak informacji o instrumencie',
-//    };
-//  }
+    const pdfFiles = filesInDirectory
+      .filter(file => {
+        const filePath = path.join(pdfDirectory, file);
+        return fs.statSync(filePath).isFile() && file.endsWith('.pdf');
+      })
+      .map(file => {
+        return {
+          name: file
+        };
+      });
+//    console.log(filesInDirectory);
+//    //const formData = new FormData();
+//   filesInDirectory.forEach((file)=> {
+//        const filepath = path.join(pdfDirectory, file);
+//            const fileBuffer=fs.readFileSync(filepath);
+//            formData.append("files", new Blob([fileBuffer]), file);
+//       });
+//        try
+//        {
+//            axios.post('http://localhost:8000/upload/', formData);
+//            console.log("Files uploaded");
+//        } catch(error){
+//            console.log("Failed uploading files", error.message);
+//        }
 
-  getFiles() {
-    try {
-      const filesInDirectory = fs.readdirSync(this.pdfDirectory);
+//        return {title: file, path: filepath};
+//    })
 
-      const pdfFiles = filesInDirectory
-        .filter(file => {
-          const filePath = path.join(this.pdfDirectory, file);
-          return fs.statSync(filePath).isFile() && file.endsWith('.pdf');
-        })
-        .map(file => {
-          const filePath = path.join(this.pdfDirectory, file); // Definicja filePath przed użyciem
-          return {
-            name: file,
-            link: filePath,
-          };
-        });
-
-      return pdfFiles;
-    } catch (error) {
-      console.error('Błąd podczas pobierania plików:', error);
-      return [];
-    }
-  }
+  return pdfFiles;
 }
 
-module.exports=FileHandler
+module.exports=FileHandler;

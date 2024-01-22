@@ -12,7 +12,6 @@ const SongDetails = ({ socket, files }) => {
     socket.on('selectedSong', handleSelectedSong);
 
     return () => {
-      // Czyszczenie subskrypcji, aby uniknąć wycieków pamięci
       socket.off('selectedSong', handleSelectedSong);
     };
   }, [socket, files]);
