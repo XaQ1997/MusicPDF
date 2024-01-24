@@ -1,123 +1,82 @@
-import React, { Component, useEffect, useState } from 'react';
-import Iframe from 'react-iframe';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import {  Link } from 'react-router-dom';
 import axios from 'axios';
 
-import socketIO from "socket.io-client";
-
-const socket=socketIO.connect('http://localhost:8000');
-
 const Muzyk=()=> {
-    const [song, setSong]=useState("SONG-1");
+    const initialInstrumentText = "Wybierz instrument..."
+    const [instruments, setInstruments]=useState([]);
+    const [selectedSong, setSelectedSong]=useState([]);
+    const [selectedInstrument, setSelectedInstrument]=useState(initialInstrumentText);
+    const [fileUrl, setFileUrl] = useState([])
 
-    let instruments=["gitara"];
-    let selected=instruments[0];
-
-    useEffect(()=>{
-        socket.on('songSelected', (data)=>setSong(data));
-    }, [socket, song]);
-
-    const uploadSong=()=>{
-        axios.get("http://localhost:8000/api/SongTitle")
+    const getSelectedSong=()=>{
+        axios.get("http://localhost:8000/SongTitle")
         .then(response=>{
-            let data = JSON.stringify(response.data);
-            data = JSON.parse(data);
+            const title = response.data.title
+            setSelectedSong(title);
+            console.log("Wybrany utwór: ", title)
+        })
+    }
 
-            setSong(data.title);
-    })}
+    const handleInstrumentSelect=(event)=> {
+        setSelectedInstrument(event.target.value)
+        console.log("Muzyk wybrał instrument: ", event.target.value)
+    }
 
-//  axios.get('http://localhost:8000/api/files')
-//      .then(response => {
-//        const names = [instruments[0]];
-//
-//        console.log("test");
-//
-//        let data = JSON.stringify(response.data);
-//        data = JSON.parse(data);
-//        data.forEach((file) => {
-//            const fileNameWithoutExtension = file.name.split(".")[0];
-//            let secondPart="";
-//
-//            if(fileNameWithoutExtension.split('_')[0]===song)
-//            {
-//                secondPart = fileNameWithoutExtension.split('_')[1];
-//                names.add(secondPart);
-//            }
-//        });
-//        console.log("test2");
-//
-//        instruments=Array.from(names);
-//
-//        console.log(instruments);
-//      })
-//      .catch(error => {
-//        console.error('Błąd pobierania danych:', error);
-//      });
+    const fetchSongs=()=> {
+        axios.get('http://localhost:8000/fileData')
+            .then(response => {
+                const songInstruments = new Set();
+                songInstruments.add(initialInstrumentText)
+                let data = JSON.stringify(response.data);
+                data = JSON.parse(data);
+                data.forEach((file) => {
+                    const fileNameWithoutExtension = file.name.split(".")[0];
+                    let secondPart="";
 
-            const urlPath="http://localhost:8000/api/files/SONG-1_gitara.pdf";
+                    if(fileNameWithoutExtension.split('_')[0]===selectedSong)
+                    {
+                        secondPart = fileNameWithoutExtension.split('_')[1];
+                        songInstruments.add(secondPart);
+                    }
+                });
+                setInstruments(Array.from(songInstruments));
+                console.log(instruments);
+            })
+            .catch(error => {
+            console.error('Błąd pobierania danych:', error);
+            });
+        }
+
+    const openPDF=()=> {
+        const fileName=selectedSong+"_"+selectedInstrument+".pdf";
+        const filePath = "http://localhost:8000/files/"+fileName
+        console.log("Otwieranie pliku PDF: ", filePath)
+        setFileUrl(filePath);
+    }
+
     return (
         <div>
-            <div>
-                <h2>Tryb muzyka</h2>
-                <div>
-                    <button onClick={uploadSong}>Pobierz utwór</button>
-                    <span>Wybrany utwór: {song}</span>
-                </div>
-                <h3>Lista utworów</h3>
-                    <div role="region" aria-label="Code Example">
-                      <select value={selected} onChange = {e=> this.handleSongSelect(e)}>
-                          {
-                              instruments.map(option => (
-                                <option key={option} value={option}>
-                                  {option}
-                                </option>
-                          ))}
-                      </select>
-                    </div>
-                </div>
-            <button onClick={e=>openPDF(song, selected)}>Otwórz plik</button>
+            <h2>Tryb muzyka</h2>
+            <button onClick={getSelectedSong}>Pobierz wybrany utwór</button>
+                    Wybrany utwór: {selectedSong}
             <br />
-            <iframe src={urlPath} width="100%" height="500px" />
-           <Link to={'/'}>
-             <button>Home</button>
-           </Link>
-        </div>
-    );
-}
-
-function openPDF(song, selected)
-{
-    const fileName=song+"_"+selected+".pdf";
-
-    const path="..\\pdf_directory\\"+fileName;
-    const urlPath="http://localhost:8000/api/files";
-//    let result="";
-//
-//    axios.get('http://localhost:8000/api/files/')
-//        .then(
-//            response=>{
-//                const fileName=song+"_"+selected+".pdf";
-//
-//                let data = JSON.stringify(response.data);
-//                data = JSON.parse(data);
-//
-//                data.forEach((file)=>{
-//                    const link=file.name;
-//
-//                    console.log(link);
-//
-//                    if(fileName==link)
-//                        result=file.link;
-//
-//                    console.log(result);
-//                });
-//    });
-
-    console.log(path);
-
-    return(
-        <div>
-            <iframe url={urlPath} src={path} width="100%" height="500px" />
+            <button onClick={fetchSongs}>Załaduj dostępne instrumenty</button>
+            <h3>Lista instrumentów</h3>
+            <select value={selectedInstrument} onChange = {handleInstrumentSelect}>
+                {
+                    instruments.map(option => (
+                    <option key={option} value={option}>
+                        {option}
+                    </option>
+                ))}
+            </select>
+            <button onClick={openPDF}>Otwórz plik nutowy</button>
+            <Link to={'/'}>
+                <button>Home</button>
+            </Link>
+            <br />
+            <p align="center"><iframe src={fileUrl} width="80%" height="1000px" /></p>
         </div>
     );
 }
